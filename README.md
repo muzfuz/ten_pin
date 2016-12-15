@@ -54,3 +54,14 @@ SCORE
 4 + 2 = 6
 TOTAL: 20
 ```
+
+## How to run this code
+
+```
+git clone git@github.com:muzfuz/ten_pin.git
+cd ten_pin
+bundle install
+bundle exec rspec
+```
+
+That's it!
