@@ -1,8 +1,10 @@
 # Ten Pin Bowling Challenge
 
-Write a game of ten pin bowling!
+Accept the challenge, and create a game of ten pin bowling!
 
-Make the tests pass however you like, and feel free to implement whatever further tests you need to make it work.
+Clone this repo, and make the tests pass! Feel free to implement whatever further tests and classes you need to make it work.
+
+The initial setup has already implemented a class with two interface methods.  If you don't like this class or this interface, feel free to change it!  There are no wrong answers, as long as your game ultimately works the right way.
 
 ## Rules of Ten Pin Bowling
 
