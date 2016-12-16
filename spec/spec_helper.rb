@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require "rspec"
+require "pry"
 
 # Add the spec directory to the load path
 $LOAD_PATH.unshift(File.dirname(__FILE__))
