@@ -56,30 +56,4 @@ describe Frame do
       expect(frame.strike?).to be false
     end
   end
-
-  context "when using a double score frame" do
-    let(:frame) { DoubleScoreFrame.new }
-
-    context "with a strike score" do
-      it "doubles the score" do
-        frame.hit_pins(10)
-        expect(frame.score).to equal 20
-      end
-    end
-
-    context "with one score" do
-      it "doubles the score" do
-        frame.hit_pins(4)
-        expect(frame.score).to equal 8
-      end
-    end
-
-    context "with two scores" do
-      it "doubles the score" do
-        frame.hit_pins(4)
-        frame.hit_pins(4)
-        expect(frame.score).to equal 16
-      end
-    end
-  end
 end

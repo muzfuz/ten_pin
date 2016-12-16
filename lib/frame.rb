@@ -34,15 +34,3 @@ class Frame
     !(first_hit.nil? || second_hit.nil?)
   end
 end
-
-class DoubleScoreFrame < Frame
-  def score
-    if first_hit && second_hit
-      (first_hit + second_hit) * 2
-    elsif first_hit
-      first_hit * 2
-    else
-      0
-    end
-  end
-end

@@ -7,22 +7,26 @@ class ScoreBoard
   end
 
   def add_score(score)
-    next_frame
+    set_frame
     current_frame.hit_pins(score)
   end
 
   def total
-    frames.reduce(0) { |sum, frame| sum + frame.score }
+    acc = 0
+    frames.each_with_index do |frame, i|
+      if frame.strike?
+        acc += frame.score + (frames[i+1]&.score || 0) + (frames[i+2]&.score || 0)
+      else
+        acc += frame.score
+      end
+    end
+    acc
   end
 
   private
 
-  def next_frame
-    if current_frame.strike?
-      frames << DoubleScoreFrame.new
-    elsif current_frame.finished?
-      frames << Frame.new
-    end
+  def set_frame
+    frames << Frame.new if current_frame.finished?
   end
 
   def current_frame
