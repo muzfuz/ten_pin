@@ -14,7 +14,6 @@ describe TenPinGame do
 
     context "when rolling 10, 4, 0" do
       it "should be a score of 18" do
-        skip "Make the previous test green first, then delete this line!"
         [10, 4, 0].each { |n| game.roll(n) }
         expect(game.score).to eq 18
       end
@@ -22,7 +21,6 @@ describe TenPinGame do
 
     context "when rolling 10,10,10" do
       it "should be a score of 60" do
-        skip "Make the previous test green first, then delete this line!"
         [10, 10, 10].each { |n| game.roll(n) }
         expect(game.score).to eq 60
       end
@@ -30,7 +28,6 @@ describe TenPinGame do
 
     context "when rolling a spare" do
       it "should be a score of 30" do
-        skip "Make the previous test green first, then delete this line!"
         [1, 9, 10].each { |n| game.roll(n) }
         expect(game.score).to eq 30
       end
@@ -38,7 +35,6 @@ describe TenPinGame do
 
     context "when playing a normal length game" do
       it "should be a score of 20" do
-        skip "Make the previous test green first, then delete this line!"
         20.times { game.roll(1) }
         expect(game.score).to eq 20
       end
@@ -46,7 +42,6 @@ describe TenPinGame do
 
     context "when playing a bonus round game" do
       it "should be a score of 78" do
-        skip "Make the previous test green first, then delete this line!"
         18.times { game.roll(1) }
         3.times { game.roll(10) }
         expect(game.score).to eq 78
