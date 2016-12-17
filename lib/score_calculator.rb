@@ -7,14 +7,32 @@ class ScoreCalculator
   end
 
   def calculate
-    frames.each_with_index.inject(0) do |sum, (frame, i)|
-      if frame.strike?
-        sum + frame.score + (frames[i + 1]&.score || 0) + (frames[i + 2]&.score || 0)
-      elsif frame.spare?
-        sum + frame.score + (frames[i + 1]&.score || 0)
-      else
-        sum + frame.score
-      end
+    apply_rules
+    frames.inject(0) { |sum, frame| sum + frame.score }
+  end
+
+  private
+
+  def apply_rules
+    frames.each do |frame|
+      apply_strike_rule(frame)
+      apply_spare_rule(frame)
     end
+  end
+
+  def apply_strike_rule(frame)
+    return unless frame.strike?
+    i = frames.index(frame)
+    frame.score += score_for_frame(i + 1) + score_for_frame(i + 2)
+  end
+
+  def apply_spare_rule(frame)
+    return unless frame.spare?
+    i = frames.index(frame)
+    frame.score += score_for_frame(i + 1)
+  end
+
+  def score_for_frame(index)
+    frames[index]&.score || 0
   end
 end

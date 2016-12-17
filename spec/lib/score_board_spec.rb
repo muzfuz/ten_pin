@@ -19,5 +19,12 @@ describe ScoreBoard do
       score_board.add_score(10)
       expect(score_board.score).to equal 60
     end
+
+    it "respects the rules for spares" do
+      score_board.add_score(5)
+      score_board.add_score(5)
+      score_board.add_score(10)
+      expect(score_board.score).to equal 30
+    end
   end
 end

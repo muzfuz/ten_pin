@@ -4,8 +4,8 @@ class ScoreBoard
     @frames = [Frame.new]
   end
 
-  def add_score(score)
-    current_frame.hit_pins(score)
+  def add_score(pins_hit)
+    current_frame.hit_pins(pins_hit)
   end
 
   def score

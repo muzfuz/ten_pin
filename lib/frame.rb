@@ -22,7 +22,7 @@ class Frame
   end
 
   def finished?
-    both_scores_filled? || score >= 10
+    rolled_twice? || score >= 10
   end
 
   private
@@ -37,7 +37,7 @@ class Frame
     end
   end
 
-  def both_scores_filled?
+  def rolled_twice?
     second_roll && first_roll
   end
 end
