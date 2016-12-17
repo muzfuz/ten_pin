@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 class ScoreBoard
-  attr_reader :frames
-
   def initialize
     @frames = [Frame.new]
   end
@@ -11,15 +9,18 @@ class ScoreBoard
   end
 
   def score
-    ScoreCalculator.calculate(@frames)
+    ScoreCalculator.new(@frames).calculate
   end
 
+  private
+  attr_reader :frames
+
   def current_frame
-    set_frame
+    keep_or_advance_frame
     frames.last
   end
 
-  def set_frame
+  def keep_or_advance_frame
     frames << Frame.new if frames.last.finished?
   end
 end
