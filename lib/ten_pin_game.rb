@@ -5,14 +5,10 @@ class TenPinGame
   end
 
   def roll(pins_hit)
-    score_board.add_score(pins_hit)
+    @score_board.add_score(pins_hit)
   end
 
   def score
-    score_board.total
+    @score_board.score
   end
-
-  private
-
-  attr_reader :score_board
 end
