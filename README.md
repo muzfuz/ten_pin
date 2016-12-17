@@ -65,3 +65,6 @@ bundle exec rspec
 ```
 
 That's it!
+
+### Solution?
+There's a branch called `solution` -- feel free to refer to it, and take it with a grain of salt.  It's probably not an optimal implementation, but it is one approach.
