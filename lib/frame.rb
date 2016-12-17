@@ -26,6 +26,10 @@ class Frame
     @first_hit == 10
   end
 
+  def spare?
+    score == 10 && !strike?
+  end
+
   private
 
   attr_reader :first_hit, :second_hit

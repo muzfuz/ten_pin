@@ -56,4 +56,19 @@ describe Frame do
       expect(frame.strike?).to be false
     end
   end
+
+  context "when scoring a spare" do
+    let(:frame) { Frame.new }
+
+    it "knows when it is a spare score" do
+      frame.hit_pins(5)
+      frame.hit_pins(5)
+      expect(frame.spare?).to be true
+    end
+
+    it "knows when it is not a spare score" do
+      frame.hit_pins(10)
+      expect(frame.spare?).to be false
+    end
+  end
 end
