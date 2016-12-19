@@ -9,10 +9,11 @@ class ScoreBoard
   end
 
   def score
-    ScoreCalculator.new(@frames).calculate
+    ScoreCalculator.new(frames).calculate
   end
 
   private
+
   attr_reader :frames
 
   def current_frame
